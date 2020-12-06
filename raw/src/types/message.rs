@@ -230,6 +230,14 @@ impl Message {
         let reply_to_message = raw.reply_to_message.clone();
         let edit_date = raw.edit_date;
 
+        eprintln!(
+            "{:?} {:?} {:?} {:?} {:?}",
+            raw.forward_date,
+            raw.forward_from,
+            raw.forward_from_chat,
+            raw.forward_from_message_id,
+            raw.forward_sender_name
+        );
         let forward = match (
             raw.forward_date,
             &raw.forward_from,
